@@ -27,3 +27,10 @@ puis ajoutez un nouvel emplacement, prenez exemple sur ce que je fais et remplac
 
 **SCREEN**
 https://prnt.sc/pfjt7j
+
+
+**Update V1 Possibilty to add animations**
+https://giphy.com/gifs/JRn2rVHrUhZJETxXMr
+
+**Update V1 possibilité d'ajouter des animations**
+https://giphy.com/gifs/JRn2rVHrUhZJETxXMr
