@@ -1,4 +1,5 @@
 --------||Script made by Super.Cool.Ninja||--------
+local isAnimEnabled = false --Change this to true if you want add anims.
 
 local function findPedModel(hash)
     if type(hash) == "string" then hash = GetHashKey(hash) end
@@ -35,8 +36,11 @@ Citizen.CreateThread(function()
             findPedModel(myPeds["hash"])
             findAnimsDictPed(myPeds["anim_dict"])
             if not DoesEntityExist(myPeds["entity"]) then
-                myPeds["entity"] = CreatePed(4, myPeds["hash"], myPeds["x"], myPeds["y"], myPeds["z"] -1, myPeds["h"], 1, 0)
-                TaskPlayAnim(myPeds["entity"],myPeds["anim_dict"], myPeds["anim_action"],1.0, 1.0, -1, 9, 1.0, 0, 0, 0)
+               --||Maybe with this new function the peds are not duplicated anymore?!||--
+                myPeds["entity"] = CreatePed(4, myPeds["hash"], myPeds["x"], myPeds["y"], myPeds["z"] -1, myPeds["h"], 0, 0)
+                if isAnimEnabled then -- This condition work for all peds
+                    TaskPlayAnim(myPeds["entity"],myPeds["anim_dict"], myPeds["anim_action"],1.0, 1.0, -1, 9, 1.0, 0, 0, 0)
+                end
                 SetEntityAsMissionEntity(myPeds["entity"])
                 SetBlockingOfNonTemporaryEvents(myPeds["entity"], true)
                 FreezeEntityPosition(myPeds["entity"], true)
